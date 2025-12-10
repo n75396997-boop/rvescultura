@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+  </head>
+
+  <body>
+    <a-scene background="color: #000000">
+
+      <!-- LUZ PARA QUE SE VEAN LOS COLORES -->
+      <a-entity light="type: directional; intensity: 1" position="1 2 1"></a-entity>
+      <a-entity light="type: ambient; intensity: 0.5"></a-entity>
+
+      <!-- PISO NEGRO -->
+      <a-plane 
+        position="0 0 -2" 
+        rotation="-90 0 0" 
+        width="20" 
+        height="20" 
+        color="#141313">
+      </a-plane>
+
+      <!-- MODELO 3D -->
+      <a-entity
+        gltf-model="url(escultura.glb)"   
+        scale="2 2 2"             <!-- Aumenta tamaño -->
+        position="0 1 -3"         <!-- Más cerca de la cámara -->
+        rotation="0 180 0">       <!-- Volteado hacia el frente -->
+      </a-entity>
+
+      <!-- CÁMARA -->
+      <a-entity position="0 1.6 0" camera look-controls></a-entity>
+
+    </a-scene>
+  </body>
+</html>
+
+    <!-- Cielo neutro -->
+    <a-sky color="#ECECEC"></a-sky>
+    
+  </a-scene>
+</body>
+</html>
